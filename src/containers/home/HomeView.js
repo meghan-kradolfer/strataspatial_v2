@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import Logo from "../../components/Logo";
 
 const Home = props => (
   <main className="home">
@@ -6,7 +7,7 @@ const Home = props => (
         <source src="http://strataspatialdesign.com/assets/videos/strataspatial-smoke2.mp4" type="video/mp4" />
     </video>
     <section class="container">
-      <h1>Strataspatial Design</h1>
+     <Logo size="large" />
     </section>
   </main>
 );

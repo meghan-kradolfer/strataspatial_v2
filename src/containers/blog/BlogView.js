@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom"
 import { fetchMusicPosts } from '../../actions/contentful/music-posts';
+import Logo from "../../components/Logo";
 
 class BlogView extends Component {
   componentWillMount() {
@@ -24,10 +25,12 @@ class BlogView extends Component {
   }
   render() {
     return (
-      <div>
-        <h2>Our Music</h2>
+      <main className="blog">
+        <section className="blog-header">
+          <Logo size="small" />
+        </section>
         {this.renderPosts()}
-      </div>
+      </main>
     );
   }
 }

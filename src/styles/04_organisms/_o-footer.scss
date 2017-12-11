@@ -1,20 +1,24 @@
 footer {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  
   .nav-item {
     bottom: 24px;
     cursor: pointer;
     position: fixed;
     background-color: #ffffff;
     text-align: center;
-    width: 48px;
-    height: 48px;
-    padding: 12px;
+    width: 35px;
+    height: 35px;
+    padding: 8px;
     border-radius: 100%;
     box-sizing: border-box;
     color: #666;
-    -webkit-animation: at-ripple 0.8s linear infinite;
-    animation: at-ripple 0.8s linear infinite;
+    -webkit-animation: at-ripple 1s linear infinite;
+    animation: at-ripple 1s linear infinite;
     .fa {
-      font-size: 24px;
+      font-size: 18px;
       -webkit-transition: 0.3s ease;
       transition: 0.3s ease;
     }
@@ -25,11 +29,15 @@ footer {
 }
 
 .enquire {
-  right: 24px;
+  right: 1rem;
 }
 
 .blog {
-  left: 24px;
+  right: 5rem;
+}
+
+.home {
+  right: 9rem;
 }
 
 .overlay {

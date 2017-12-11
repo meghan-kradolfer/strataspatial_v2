@@ -1,0 +1,18 @@
+.blog-header {
+  padding: 1rem 2rem;
+  background-color: #141414;
+  border-bottom: 0.5rem solid #eee;
+  position: relative;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 2rem;
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #eee;
+  }
+}

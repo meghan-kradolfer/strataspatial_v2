@@ -30,15 +30,15 @@
 
 @-webkit-keyframes at-ripple {
   0% {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.2); }
+    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2); }
   100% {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0); } }
+    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.2), 0 0 0 8px rgba(255, 255, 255, 0); } }
 
 @keyframes at-ripple {
   0% {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.2); }
+    box-shadow: 0 2px 3px rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2); }
   100% {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0); } }
+    box-shadow: 0 2px 3px rgba(255, 255, 255, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.2), 0 0 0 8px rgba(255, 255, 255, 0); } }
 
 /* ==========================================================================
    Normalize.scss settings
@@ -425,23 +425,10 @@ body {
   font-weight: 300;
   font-size: 16px;
   overflow: hidden;
-  height: 100vh;
   background-color: #141414; }
 
 main {
   height: 100%; }
-
-h1 {
-  font-size: 2.8rem;
-  letter-spacing: 1.5rem;
-  font-weight: normal;
-  animation: flicker 5s infinite;
-  animation-delay: 8s;
-  margin-bottom: 1rem; }
-  @media screen and (max-width: 680px) {
-    h1 {
-      font-size: 1rem;
-      letter-spacing: 0.5rem; } }
 
 h2 {
   letter-spacing: 1rem;
@@ -497,32 +484,71 @@ h2 {
     flex-basis: 100%;
     max-width: 100%; }
 
-footer .nav-item {
-  bottom: 24px;
-  cursor: pointer;
+.logo {
+  color: #fff;
+  font-weight: normal;
+  animation: flicker 5s infinite;
+  animation-delay: 8s; }
+  .logo.large {
+    font-size: 2.8rem;
+    letter-spacing: 1.5rem; }
+  .logo.small {
+    font-size: 1rem;
+    letter-spacing: 0.5rem; }
+  @media screen and (max-width: 680px) {
+    .logo {
+      font-size: 1rem;
+      letter-spacing: 0.5rem; } }
+
+.blog-header {
+  padding: 1rem 2rem;
+  background-color: #141414;
+  border-bottom: 0.5rem solid #eee;
+  position: relative; }
+  .blog-header:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 2rem;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #eee; }
+
+footer {
+  height: 50px;
   position: fixed;
-  background-color: #ffffff;
-  text-align: center;
-  width: 48px;
-  height: 48px;
-  padding: 12px;
-  border-radius: 100%;
-  box-sizing: border-box;
-  color: #666;
-  -webkit-animation: at-ripple 0.8s linear infinite;
-  animation: at-ripple 0.8s linear infinite; }
-  footer .nav-item .fa {
-    font-size: 24px;
-    -webkit-transition: 0.3s ease;
-    transition: 0.3s ease; }
-  footer .nav-item:hover .fa {
-    color: #000; }
+  width: 100%; }
+  footer .nav-item {
+    bottom: 24px;
+    cursor: pointer;
+    position: fixed;
+    background-color: #ffffff;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    color: #666;
+    -webkit-animation: at-ripple 1s linear infinite;
+    animation: at-ripple 1s linear infinite; }
+    footer .nav-item .fa {
+      font-size: 18px;
+      -webkit-transition: 0.3s ease;
+      transition: 0.3s ease; }
+    footer .nav-item:hover .fa {
+      color: #000; }
 
 .enquire {
-  right: 24px; }
+  right: 1rem; }
 
 .blog {
-  left: 24px; }
+  right: 5rem; }
+
+.home {
+  right: 9rem; }
 
 .overlay {
   -webkit-transition: all 1s linear;
@@ -627,3 +653,8 @@ video::-webkit-media-controls-start-playback-button {
 
 .home {
   height: 100vh; }
+
+.blog {
+  background-color: #fff; }
+  .blog article {
+    padding: 1rem; }

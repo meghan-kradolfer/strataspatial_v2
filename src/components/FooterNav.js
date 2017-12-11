@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 class FooterNav extends React.Component {
   state = { showOverlay: false };
@@ -11,8 +11,11 @@ class FooterNav extends React.Component {
         <div className="enquire nav-item" onClick={() => this.setState({ showOverlay: !showOverlay })}>
           <span className="fa fa-envelope" />
         </div>
+        <Link to="/" className="home nav-item">
+          <span className="fa fa-home" />
+        </Link>
         <Link to="/blog" className="blog nav-item">
-        <span className="fa fa-rss" />
+          <span className="fa fa-rss" />
         </Link>
         <div className={`overlay ${showOverlay ? "show" : "none"}`}>
           <h3>Get in touch</h3>

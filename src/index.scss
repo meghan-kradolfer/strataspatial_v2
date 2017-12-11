@@ -5,5 +5,8 @@
 @import "./styles/01_base/b-root";
 @import "./styles/01_base/b-typography";
 @import "./styles/01_base/b-grid";
+@import "./styles/02_atoms/_a-logo.scss";
+@import "./styles/04_organisms/_o-headers.scss";
 @import "./styles/04_organisms/_o-footer.scss";
 @import "./styles/06_page/p-home";
+@import "./styles/06_page/p-blog";
