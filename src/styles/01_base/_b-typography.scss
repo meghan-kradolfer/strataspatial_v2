@@ -1,0 +1,24 @@
+h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1.5rem;
+    font-weight: normal;
+    animation: flicker 5s infinite;
+    animation-delay: 8s;
+    margin-bottom: 1rem;
+    @media screen and (max-width: 680px) {
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
+h2 {
+    letter-spacing: 1rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    animation: flicker 5s infinite;
+    animation-delay: 8s;
+    @media screen and (max-width: 680px) {
+        font-size: 0.5rem;
+        letter-spacing: 0.2rem;
+    }
+}

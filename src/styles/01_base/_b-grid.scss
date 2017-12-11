@@ -1,0 +1,28 @@
+
+.container {
+  @include center();
+  opacity: 0;
+  animation: opening 8s linear forwards;
+  animation-delay: 1s;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  text-align: center;
+}
+
+.row {
+  @include flex();
+
+  > * {
+    @include flex-child();
+  }
+
+  .col-xs-6 {
+     flex-basis: 50%;
+    max-width: 50%;
+  }
+  .col-xs-12  {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
