@@ -1,21 +1,29 @@
-video {
-    @include transform(translateX(-50%) translateY(-50%));
-    @include transition($prop: opacity);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-}
-
-video::-webkit-media-controls-start-playback-button {
-    display: none!important;
-    -webkit-appearance: none;
-}
-
 .home {
     height: 100vh;
+    .container {
+        @include center();
+        opacity: 0;
+        animation: opening 8s linear forwards;
+        animation-delay: 1s;
+        color: #FFF;
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        text-align: center;
+    }
+    video {
+        @include transform(translateX(-50%) translateY(-50%));
+        @include transition($prop: opacity);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+    }
+    video::-webkit-media-controls-start-playback-button {
+        display: none!important;
+        -webkit-appearance: none;
+    }
 }

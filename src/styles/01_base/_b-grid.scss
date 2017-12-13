@@ -1,28 +1,27 @@
-
 .container {
-  @include center();
-  opacity: 0;
-  animation: opening 8s linear forwards;
-  animation-delay: 1s;
-  color: #FFF;
-  text-transform: uppercase;
-  letter-spacing: 20px;
-  text-align: center;
+    width: $container-width;
+    margin: 0 auto;
 }
 
 .row {
-  @include flex();
-
-  > * {
-    @include flex-child();
-  }
-
-  .col-xs-6 {
-     flex-basis: 50%;
-    max-width: 50%;
-  }
-  .col-xs-12  {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+    @include flex();
+    >* {
+        @include flex-child();
+    }
+    .col-xs-4 {
+        flex-basis: 33.3%;
+        max-width: 33.3%;
+        margin-right: $spacing-sm;
+        &:nth-of-type(2n+1) {
+          margin-right: 0;
+        }
+    }
+    .col-xs-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+    .col-xs-12 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 }

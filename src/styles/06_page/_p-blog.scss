@@ -1,7 +1,35 @@
-.blog {
-  background-color: #fff;
+.blog-view {
+  .row {
+    padding: $spacing-lg 0;
+    a {
+      text-align: center;
+      text-decoration: none;
+      font-family: $serif;
+      letter-spacing: 1.2px;
+      font-size: 0.8rem;
+      padding-top: $spacing-sm;
+      display: block;
+    }
+    .img {
+      height: 20rem;
+      width: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 3px 3px 3px black;
+      margin-bottom: $spacing;
+    }
+  }
+}
 
-  article {
-    padding: 1rem;
+.blog-post {
+  .img {
+    height: 30rem;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 3px 3px 3px black;
+    margin-bottom: $spacing;
   }
 }

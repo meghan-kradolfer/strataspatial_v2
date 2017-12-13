@@ -8,26 +8,31 @@ class BlogView extends Component {
   componentWillMount() {
     this.props.fetchPosts();
   }
-  renderPosts() {
-    return this.props.posts.map((post, index) => {
-      const data = post.fields
+  renderPosts(posts) {
+    return posts.map((post, index) => {
+      const data = post.fields;
+      const images = post.images;
+      console.log(images[0].file.url);
       return (
-        <article key={index}>
+        <article key={index} className="col-xs-4">
+          <div className="img" style={{backgroundImage: `url(${images[0].file.url})`}}></div>
           <h3>{data.title}</h3>
-          <Link to={`/post/${post.sys.id}`} className="nav-item">
-            view
-      </Link>
+          <Link to={`/blog-post/${post.sys.id}`}>
+            Read More
+          </Link>
         </article>
-      );
+      )
     });
   }
   render() {
     return (
-      <main className="blog">
+      <main className="blog-view container">
         <section className="blog-header">
           <Logo size="small" />
         </section>
-        {this.renderPosts()}
+        <section className="row">
+          {this.props.posts.items ? this.renderPosts(this.props.posts.items) : "hello"} 
+        </section>
       </main>
     );
   }

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class FooterNav extends React.Component {
+class Navigation extends React.Component {
   state = { showOverlay: false };
 
   render() {
     const { showOverlay } = this.state;
     return (
-      <footer>
+      <Nav>
         <div className="enquire nav-item" onClick={() => this.setState({ showOverlay: !showOverlay })}>
           <span className="fa fa-envelope" />
         </div>
@@ -41,9 +41,9 @@ class FooterNav extends React.Component {
             </form>
           </div>
         </div>
-      </footer>
+      </Nav>
     );
   }
 }
 
-export default FooterNav;
+export default Navigation;

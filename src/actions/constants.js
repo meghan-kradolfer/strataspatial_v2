@@ -1,6 +1,7 @@
 export const FETCH_POSTS = "FETCH_POSTS";
 export const FETCH_SINGLE_POST = "FETCH_SINGLE_POST";
 export const FETCH_LAST_FM = "FETCH_LAST_FM";
+export const FETCH_SINGLE_ASSET = "FETCH_SINGLE_ASSET";
 
 export const INITIAL_STATE = { all: [] };
 

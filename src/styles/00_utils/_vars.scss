@@ -1,10 +1,15 @@
 // Colours
-$black: rgba(47, 47, 47, 0.98);
-$white: #F0F0F2;
-
-$green: #66857B;
-$blue: #254559;
+$black: #141414;
+$white: #FFFFFF;
 
 //Fonts
-$serif: "Crimson Text", serif;
+$serif: "Playfair Display", serif;
 $sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Widths
+$container-width: 70rem;
+
+// Spacing
+$spacing: 1rem;
+$spacing-sm: 0.5rem;
+$spacing-lg: 2rem;
