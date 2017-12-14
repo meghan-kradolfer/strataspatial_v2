@@ -5,27 +5,22 @@
     font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
-    
     &.top-left {
         top: 1rem;
         left: 1rem;
     }
-
     &.top-right {
         top: 1rem;
         right: 1rem;
     }
-
     &.bottom-left {
         bottom: 1rem;
         left: 1rem;
     }
-
     &.bottom-right {
         bottom: 1rem;
         right: 1rem;
     }
-
     .link-text {
         @include transition();
         visibility: hidden;
@@ -34,29 +29,24 @@
         vertical-align: middle;
         letter-spacing: 1.5px;
     }
-
-    &.top-left .link-text, 
+    &.top-left .link-text,
     &.bottom-left .link-text {
         margin-left: 2rem;
     }
-    
-    &.top-right .link-text, 
+    &.top-right .link-text,
     &.bottom-right .link-text {
         margin-right: 2rem;
     }
-
     &:hover {
         .link-text {
             opacity: 1;
             visibility: visible;
         }
-
-        &.top-left .link-text, 
+        &.top-left .link-text,
         &.bottom-left .link-text {
             margin-left: 1rem;
         }
-        
-        &.top-right .link-text, 
+        &.top-right .link-text,
         &.bottom-right .link-text {
             margin-right: 1rem;
         }

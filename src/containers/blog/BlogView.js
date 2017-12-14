@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom"
+import Moment from 'react-moment';
+
 import { fetchPosts } from '../../actions/contentful/posts';
 import Logo from "../../components/Logo";
+import BlogImage from "../../containers/blog/BlogImage";
 
 class BlogView extends Component {
   componentWillMount() {
@@ -11,27 +14,25 @@ class BlogView extends Component {
   renderPosts(posts) {
     return posts.map((post, index) => {
       const data = post.fields;
-      const images = post.images;
-      console.log(images[0].file.url);
       return (
         <article key={index} className="col-xs-4">
-          <div className="img" style={{backgroundImage: `url(${images[0].file.url})`}}></div>
-          <h3>{data.title}</h3>
           <Link to={`/blog-post/${post.sys.id}`}>
-            Read More
+            <BlogImage id={data.image[0].sys.id} />
           </Link>
+          <h4>{data.title}</h4>
+          <p><Moment date={post.sys.createdAt} format="LLL" /></p>
         </article>
       )
     });
   }
   render() {
     return (
-      <main className="blog-view container">
+      <main className="blog view container">
         <section className="blog-header">
           <Logo size="small" />
         </section>
         <section className="row">
-          {this.props.posts.items ? this.renderPosts(this.props.posts.items) : "hello"} 
+          {this.props.posts.items ? this.renderPosts(this.props.posts.items) : "loading"} 
         </section>
       </main>
     );

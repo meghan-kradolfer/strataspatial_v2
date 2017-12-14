@@ -9,11 +9,11 @@
         @include flex-child();
     }
     .col-xs-4 {
-        flex-basis: 33.3%;
-        max-width: 33.3%;
+        flex-basis: 32.8%;
+        max-width: 32.8%;
         margin-right: $spacing-sm;
-        &:nth-of-type(2n+1) {
-          margin-right: 0;
+        &:nth-of-type(3n) {
+            margin-right: 0;
         }
     }
     .col-xs-6 {

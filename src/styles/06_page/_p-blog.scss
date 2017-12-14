@@ -1,35 +1,37 @@
-.blog-view {
-  .row {
-    padding: $spacing-lg 0;
-    a {
-      text-align: center;
-      text-decoration: none;
-      font-family: $serif;
-      letter-spacing: 1.2px;
-      font-size: 0.8rem;
-      padding-top: $spacing-sm;
-      display: block;
+.blog {
+    .row {
+        padding: $spacing-lg 0;
     }
-    .img {
-      height: 20rem;
-      width: 100%;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      box-shadow: 3px 3px 3px black;
-      margin-bottom: $spacing;
+    .img-parent {
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 3px 3px 3px black;
+        .img {
+            @include transition();
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        &:hover .img {
+            @include transform(scale(1.1));
+        }
     }
-  }
-}
-
-.blog-post {
-  .img {
-    height: 30rem;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 3px 3px 3px black;
-    margin-bottom: $spacing;
-  }
+    &.view {
+        .img-parent {
+            height: 20rem;
+            cursor: pointer;
+            margin: $spacing-sm 0;
+        }
+    }
+    &.post {
+      h4 {
+        margin: $spacing-lg 0;
+      }
+        .img-parent {
+            height: 30rem;
+            width: 100%;
+            margin: 0 0 $spacing 0;
+        }
+    }
 }

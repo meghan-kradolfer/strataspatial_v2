@@ -8,11 +8,11 @@ body {
 }
 
 body {
-  font-family: $sans-serif;
+  background-color: $black;
+  color: $white;    
+  font-family: $serif;
   font-weight: 300;
   font-size: 16px;
-  background-color: $black;
-  color: $white;
 }
 
 main {

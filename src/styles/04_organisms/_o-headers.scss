@@ -1,18 +1,22 @@
 .blog-header {
-  padding: 1rem 0;
-  background-color: $black;
-  border-bottom: 0.5rem solid #eee;
-  position: relative;
-  
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 2rem;
-    width: 0; 
-    height: 0; 
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #eee;
-  }
+    padding: 1rem 0;
+    background-color: $black;
+    border-bottom: 0.5rem solid $gray;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 2rem;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid $gray;
+    }
+    h3 {
+      position: absolute;
+      right:0;
+      top: $spacing;
+    }
 }

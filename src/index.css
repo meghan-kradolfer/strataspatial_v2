@@ -421,11 +421,11 @@ body {
   height: 100%; }
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
   background-color: #141414;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  font-size: 16px; }
 
 main {
   height: 100%; }
@@ -434,10 +434,25 @@ img {
   max-width: 100%; }
 
 h3 {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 1.5px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px; }
+
+h4 {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
   margin: 0;
   text-align: center; }
+
+p {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0.5rem 0;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  display: block;
+  line-height: 1.5rem; }
 
 .container {
   width: 70rem;
@@ -466,10 +481,10 @@ h3 {
     padding-right: .5rem;
     padding-left: .5rem; }
   .row .col-xs-4 {
-    flex-basis: 33.3%;
-    max-width: 33.3%;
+    flex-basis: 32.8%;
+    max-width: 32.8%;
     margin-right: 0.5rem; }
-    .row .col-xs-4:nth-of-type(2n+1) {
+    .row .col-xs-4:nth-of-type(3n) {
       margin-right: 0; }
   .row .col-xs-6 {
     flex-basis: 50%;
@@ -479,7 +494,8 @@ h3 {
     max-width: 100%; }
 
 .logo {
-  color: #fff;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #FFFFFF;
   font-weight: normal;
   animation: flicker 5s infinite;
   animation-delay: 8s; }
@@ -493,6 +509,11 @@ h3 {
     .logo {
       font-size: 1rem;
       letter-spacing: 0.5rem; } }
+
+.img-loading {
+  height: 100%;
+  width: 100%;
+  background-color: #EEEEEE; }
 
 .nav-item {
   transform: translateZ(0);
@@ -540,7 +561,7 @@ h3 {
 .blog-header {
   padding: 1rem 0;
   background-color: #141414;
-  border-bottom: 0.5rem solid #eee;
+  border-bottom: 0.5rem solid #EEEEEE;
   position: relative; }
   .blog-header:after {
     content: "";
@@ -551,7 +572,11 @@ h3 {
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #eee; }
+    border-top: 20px solid #EEEEEE; }
+  .blog-header h3 {
+    position: absolute;
+    right: 0;
+    top: 1rem; }
 
 .home {
   height: 100vh; }
@@ -564,7 +589,7 @@ h3 {
     opacity: 0;
     animation: opening 8s linear forwards;
     animation-delay: 1s;
-    color: #FFF;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 20px;
     text-align: center; }
@@ -586,30 +611,34 @@ h3 {
     display: none !important;
     -webkit-appearance: none; }
 
-.blog-view .row {
+.blog .row {
   padding: 2rem 0; }
-  .blog-view .row a {
-    text-align: center;
-    text-decoration: none;
-    font-family: "Playfair Display", serif;
-    letter-spacing: 1.2px;
-    font-size: 0.8rem;
-    padding-top: 0.5rem;
-    display: block; }
-  .blog-view .row .img {
-    height: 20rem;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 3px 3px 3px black;
-    margin-bottom: 1rem; }
 
-.blog-post .img {
+.blog .img-parent {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px black; }
+  .blog .img-parent .img {
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .blog .img-parent:hover .img {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+
+.blog.view .img-parent {
+  height: 20rem;
+  cursor: pointer;
+  margin: 0.5rem 0; }
+
+.blog.post h4 {
+  margin: 2rem 0; }
+
+.blog.post .img-parent {
   height: 30rem;
   width: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 3px 3px 3px black;
-  margin-bottom: 1rem; }
+  margin: 0 0 1rem 0; }
