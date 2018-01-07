@@ -1,33 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom"
 import Moment from 'react-moment';
 
 import { fetchPosts } from '../../actions/contentful/posts';
-import Logo from "../../components/Logo";
-import BlogImage from "../../containers/blog/BlogImage";
-import BlogPost from '../../containers/blog/BlogPost';
-import Modal from '../../components/Modal';
+import { postMounted } from '../../actions/post-mounted';
+import BlogImage from "./BlogImage";
 
 class BlogView extends Component {
-  constructor(){
-    super();
-    this.state = { postId: false };
-    this.handleClick = this.handleClick.bind(this);
-    this.removePost = this.removePost.bind(this);
-  }
   componentWillMount() {
     this.props.fetchPosts();
   }
   handleClick(postId) {
-    this.setState({
-      postId: postId
-    })
-  }
-  removePost() {
-    this.setState({
-      postId: false
-    })
+    this.props.postMounted(postId);
   }
   renderPosts(posts) {
     return posts.map((post, index) => {
@@ -49,7 +33,6 @@ class BlogView extends Component {
         <div className="row view">
           {this.props.posts.items ? this.renderPosts(this.props.posts.items) : "loading"} 
         </div>
-        {this.state.postId ? <Modal close={this.removePost}><BlogPost postId={this.state.postId} /></Modal> : false}
       </section>
     );
   }
@@ -57,8 +40,9 @@ class BlogView extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts.all
+    posts: state.posts.all,
+    postSelected: state.postSelected
   };
 }
 
-export default connect(mapStateToProps, { fetchPosts })(BlogView);
+export default connect(mapStateToProps, { fetchPosts, postMounted })(BlogView);

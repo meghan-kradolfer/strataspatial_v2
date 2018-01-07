@@ -6,7 +6,7 @@ const Home = props => (
     <video id="video" autoPlay muted loop>
         <source src="http://strataspatialdesign.com/assets/videos/strataspatial-smoke2.mp4" type="video/mp4" />
     </video>
-    <section class="container">
+    <section className="container">
      <Logo size="large" />
     </section>
   </main>

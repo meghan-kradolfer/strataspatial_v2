@@ -15,7 +15,7 @@ npm install
 Run on local server
 
 ``` javascript
-yarn start-dev
+yarn start
 ```
 
 ## Building

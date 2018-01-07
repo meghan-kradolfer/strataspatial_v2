@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchPost } from '../../actions/contentful/post';
 import { fetchAsset } from '../../actions/contentful/asset';
 import Logo from '../../components/Logo';
-import BlogImage from '../../containers/blog/BlogImage';
+import BlogImage from './BlogImage';
 
 class BlogPost extends Component {
 	componentDidMount() {

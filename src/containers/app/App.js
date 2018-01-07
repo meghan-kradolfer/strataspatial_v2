@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import View from '../view/View';
+import { connect } from 'react-redux';
+import { Link, Element } from 'react-scroll';
+
+import { postMounted } from '../../actions/post-mounted';
 import Home from '../home/HomeView';
 import BlogView from '../blog/BlogView';
-import tracker from '../../utils/google-analytics';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+// import tracker from '../../utils/google-analytics';
+import BlogPost from '../blog/BlogPost';
+import Modal from '../../components/Modal';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { transform: false };
 		this.handleScroll = this.handleScroll.bind(this);
+		this.removePost = this.removePost.bind(this);
 	}
 	componentDidMount() {
 		window.scrollTo(0, 0);
@@ -21,9 +25,13 @@ class App extends Component {
 			transform: document.documentElement.scrollTop > window.innerHeight - 64
 		});
 	}
+	removePost() {
+		this.props.postMounted();
+	}
 	render() {
 		return (
-			<div className={`transform-${this.state.transform}`}>
+			<div>
+				<main className={`transform-${this.state.transform} ${this.props.postSelected ? 'fixed' : ''}`}>
 					<Element name="home" className="element">
 						<Home />
 					</Element>
@@ -44,9 +52,23 @@ class App extends Component {
 					<Element name="blog" className="element">
 						<BlogView />
 					</Element>
-				</div>
+				</main>
+				{this.props.postSelected ? (
+					<Modal close={this.removePost}>
+						<BlogPost postId={this.props.postSelected} />
+					</Modal>
+				) : (
+					false
+				)}
+			</div>
 		);
 	}
 }
 
-export default App;
+function mapStateToProps(state) {
+	return {
+		postSelected: state.postSelected
+	};
+}
+
+export default connect(mapStateToProps, { postMounted })(App);

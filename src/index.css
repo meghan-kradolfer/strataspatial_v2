@@ -445,6 +445,13 @@ img {
 .transform-true {
   margin-top: 64px; }
 
+.fixed {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); }
+
 h3 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
@@ -546,6 +553,7 @@ p {
   text-align: center;
   padding: 1rem 0; }
   .navigation .nav-item {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #FFFFFF;
     position: relative;
     font-size: 1.5rem;
@@ -628,7 +636,7 @@ p {
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 9999; }
   .modal .close {
     color: #FFFFFF;
@@ -708,6 +716,15 @@ p {
   .post h4 {
     margin: 2rem 0; }
   .post .img-parent {
+    width: 100%;
+    overflow: hidden;
     height: 30rem;
     width: 100%;
     margin: 0 0 1rem 0; }
+    .post .img-parent .img {
+      -webkit-transition: all 1s linear;
+      transition: all 1s linear;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover; }
