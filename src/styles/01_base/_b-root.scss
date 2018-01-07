@@ -22,3 +22,11 @@ main {
 img {
   max-width: 100%;
 }
+
+.fade-in {
+  animation: fadeIn 5s linear;
+}
+
+.transform-true {
+  margin-top: 64px;
+}

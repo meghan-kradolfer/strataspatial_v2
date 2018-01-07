@@ -7,12 +7,14 @@
 @import "./styles/01_base/b-typography";
 @import "./styles/01_base/b-grid";
 
+@import "./styles/02_atoms/a-icon.scss";
 @import "./styles/02_atoms/a-logo.scss";
 @import "./styles/02_atoms/a-image.scss";
 
 @import "./styles/03_molecules/m-nav_item";
 
 @import "./styles/04_organisms/o-headers.scss";
+@import "./styles/04_organisms/o-modals.scss";
 
 @import "./styles/06_page/p-home";
 @import "./styles/06_page/p-blog";

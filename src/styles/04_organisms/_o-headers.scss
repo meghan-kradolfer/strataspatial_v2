@@ -1,7 +1,6 @@
 .blog-header {
     padding: 1rem 0;
-    background-color: $black;
-    border-bottom: 0.5rem solid $gray;
+    border-bottom: 0.5rem solid $black;
     position: relative;
     &:after {
         content: "";
@@ -12,9 +11,13 @@
         height: 0;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: 20px solid $gray;
+        border-top: 20px solid $black;
+    }
+    .logo {
+        color: $black;
     }
     h3 {
+        color: $black;
       position: absolute;
       right:0;
       top: $spacing;

@@ -1,5 +1,5 @@
 .home {
-    height: 100vh;
+    height: calc(100vh - 64px);
     .container {
         @include center();
         opacity: 0;
