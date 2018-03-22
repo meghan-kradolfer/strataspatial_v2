@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { fetchAsset } from '../../actions/contentful/asset';
 
+function mapStateToProps(state) {
+	return {
+		assets: state.assets
+	};
+}
+
+const propTypes = {
+	id: PropTypes.string,
+	fetchAsset: PropTypes.func,
+	assets: PropTypes.object
+};
+
 class BlogImage extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = { loaded: false };
 	}
-
 	componentWillMount() {
 		this.props.fetchAsset(this.props.id);
 	}
-
 	render() {
 		const image = this.props.assets[this.props.id];
 		return image ? (
@@ -23,7 +35,7 @@ class BlogImage extends Component {
 					alt={`Strataspatial - ${image.title}`}
 					onLoad={() =>
 						setTimeout(
-							function() {
+							function () {
 								this.setState({ loaded: true });
 							}.bind(this),
 							500
@@ -34,10 +46,6 @@ class BlogImage extends Component {
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		assets: state.assets
-	};
-}
+BlogImage.propTypes = propTypes;
 
 export default connect(mapStateToProps, { fetchAsset })(BlogImage);

@@ -8,13 +8,14 @@
     &.large {
         font-size: 2.8rem;
         letter-spacing: 1.5rem;
+        @media (max-width: $container-width-md) {
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem
+        }
     }
     &.small {
         font-size: 1rem;
         letter-spacing: 0.5rem;
     }
-    @media screen and (max-width: 680px) {
-        font-size: 1rem;
-        letter-spacing: 0.5rem;
-    }
+    
 }

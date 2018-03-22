@@ -1,16 +1,15 @@
 import { combineReducers } from 'redux';
-import PostsReducer from './posts-reducer';
-import LastFmReducer from './lastfm-reducer';
-import PostReducer from './post-reducer';
-import AssetReducer from './asset-reducer';
-import postSelected from './post-mounted';
+
+import Selected from './global/select';
+import PostsReducer from './contentful/posts-reducer';
+import PostReducer from './contentful/post-reducer';
+import AssetReducer from './contentful/asset-reducer';
 
 const rootReducer = combineReducers({
-  posts: PostsReducer,
-  lastFmPosts: LastFmReducer,
-  post: PostReducer,
+  selected: Selected,
   assets: AssetReducer,
-  postSelected: postSelected
+  post: PostReducer,
+  posts: PostsReducer
 });
 
 export default rootReducer;

@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { fetchPost } from '../../actions/contentful/post';
 import { fetchAsset } from '../../actions/contentful/asset';
 import Logo from '../../components/Logo';
 import BlogImage from './BlogImage';
 
+function mapStateToProps(state) {
+	return {
+		post: state.post.post,
+		assets: state.assets
+	};
+}
+
+const propTypes = {
+	post: PropTypes.object,
+	postId: PropTypes.string,
+	fetchPost: PropTypes.func
+};
+
 class BlogPost extends Component {
+	constructor(props) {
+		super(props);
+	}
 	componentDidMount() {
 		this.props.fetchPost(this.props.postId);
 	}
@@ -34,11 +52,6 @@ class BlogPost extends Component {
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		post: state.post.post,
-		assets: state.assets
-	};
-}
+BlogPost.propTypes = propTypes;
 
 export default connect(mapStateToProps, { fetchPost, fetchAsset })(BlogPost);

@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Element } from 'react-scroll';
+import PropTypes from 'prop-types';
 
-import { postMounted } from '../../actions/post-mounted';
-import Home from '../home/HomeView';
-import BlogView from '../blog/BlogView';
-// import tracker from '../../utils/google-analytics';
-import BlogPost from '../blog/BlogPost';
+import { select } from '../../actions/global/select';
 import Modal from '../../components/Modal';
+import Home from '../../components/Home';
+import Enquire from '../../components/Enquire';
+import BlogView from '../blog/BlogView';
+import BlogPost from '../blog/BlogPost';
+
+function mapStateToProps(state) {
+	return {
+		selected: state.selected
+	};
+}
+
+const propTypes = {
+	select: PropTypes.func,
+	selected: PropTypes.string
+};
 
 class App extends Component {
 	constructor(props) {
@@ -22,23 +34,24 @@ class App extends Component {
 	}
 	handleScroll() {
 		this.setState({
-			transform: document.documentElement.scrollTop > window.innerHeight - 64
+			transform: document.documentElement.scrollTop > window.innerHeight - 64,
+			top: document.documentElement.scrollTop
 		});
 	}
 	removePost() {
-		this.props.postMounted();
+		this.props.select();
 	}
 	render() {
 		return (
 			<div>
-				<main className={`transform-${this.state.transform} ${this.props.postSelected ? 'fixed' : ''}`}>
+				<main className={`transform-${this.state.transform} ${this.props.selected ? 'fixed' : ''}`}>
 					<Element name="home" className="element">
 						<Home />
 					</Element>
 					<div className="navigation">
 						<Link className="nav-item" activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}>
+						 	<span className="link-text">Home</span>
 							<span className="fa fa-home" />
-							<span className="link-text">Home</span>
 						</Link>
 						<Link className="nav-item" activeClass="active" to="blog" spy={true} smooth={true} offset={50} duration={500}>
 							<span className="link-text">Blog</span>
@@ -52,23 +65,22 @@ class App extends Component {
 					<Element name="blog" className="element">
 						<BlogView />
 					</Element>
+					<Element name="enquire" className="element">
+						<Enquire />
+					</Element>
 				</main>
-				{this.props.postSelected ? (
+				{this.props.selected ? (
 					<Modal close={this.removePost}>
-						<BlogPost postId={this.props.postSelected} />
+						<BlogPost postId={this.props.selected} />
 					</Modal>
 				) : (
-					false
-				)}
+						false
+					)}
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		postSelected: state.postSelected
-	};
-}
+App.propTypes = propTypes;
 
-export default connect(mapStateToProps, { postMounted })(App);
+export default connect(mapStateToProps, { select })(App);
