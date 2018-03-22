@@ -21,9 +21,6 @@ const propTypes = {
 };
 
 class BlogPost extends Component {
-	constructor(props) {
-		super(props);
-	}
 	componentDidMount() {
 		this.props.fetchPost(this.props.postId);
 	}
@@ -36,13 +33,9 @@ class BlogPost extends Component {
 				<div className="blog-header">
 					<Logo size="small" /> <h3>{post.title}</h3>
 				</div>
-				<div className="row">
-					<div className="col-xs-12 content">
-						<BlogImage id={post.image[0].sys.id} />
-						<h4>{post.title}</h4>
-						<p>{post.post}</p>
-					</div>
-				</div>
+				<BlogImage id={post.image[0].sys.id} />
+				<h4>{post.title}</h4>
+				<p>{post.post}</p>
 			</div>
 		);
 	}

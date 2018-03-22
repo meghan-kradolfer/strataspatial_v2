@@ -27,7 +27,7 @@ class BlogImage extends Component {
 	render() {
 		const image = this.props.assets[this.props.id];
 		return image ? (
-			<div className="img-parent">
+			<div className="img-loaded">
 				{this.state.loaded ? <div className="img" style={{ backgroundImage: `url(${image.file.url})` }} /> : <div className="img-loading" />}
 				<img
 					style={this.state.loaded ? { display: 'none' } : {}}

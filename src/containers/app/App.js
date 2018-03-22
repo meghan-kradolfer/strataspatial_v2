@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Element } from 'react-scroll';
+import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
 
 import { select } from '../../actions/global/select';
@@ -45,12 +45,10 @@ class App extends Component {
 		return (
 			<div>
 				<main className={`transform-${this.state.transform} ${this.props.selected ? 'fixed' : ''}`}>
-					<Element name="home" className="element">
-						<Home />
-					</Element>
+					<Home />
 					<div className="navigation">
 						<Link className="nav-item" activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}>
-						 	<span className="link-text">Home</span>
+							<span className="link-text">Home</span>
 							<span className="fa fa-home" />
 						</Link>
 						<Link className="nav-item" activeClass="active" to="blog" spy={true} smooth={true} offset={50} duration={500}>
@@ -62,12 +60,8 @@ class App extends Component {
 							<span className="fa fa-envelope" />
 						</Link>
 					</div>
-					<Element name="blog" className="element">
-						<BlogView />
-					</Element>
-					<Element name="enquire" className="element">
-						<Enquire />
-					</Element>
+					<BlogView />
+					<Enquire />
 				</main>
 				{this.props.selected ? (
 					<Modal close={this.removePost}>

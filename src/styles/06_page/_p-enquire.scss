@@ -1,0 +1,6 @@
+.enquire {
+    height: calc(100vh - 64px);
+    .container {
+        @include center();
+    }
+}

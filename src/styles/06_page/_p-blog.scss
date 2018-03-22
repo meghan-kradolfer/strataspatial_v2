@@ -1,57 +1,14 @@
 .blog {
-	.row {
-		padding: $spacing-lg 0;
-	}
-	.img-parent {
-		width: 100%;
-		overflow: hidden;
+	margin-top: $spacing;
+	.img-loaded {
+		box-shadow: 3px 3px 3px black;
+		cursor: pointer;
 		.img {
 			@include transition();
-			width: 100%;
-			height: 100%;
-			background-repeat: no-repeat;
 			background-size: cover;
 		}
-	}
-	.view {
-		.img-parent {
-			box-shadow: 3px 3px 3px black;
-			// opacity: 0;
-			height: 20rem;
-			cursor: pointer;
-			margin: $spacing-sm 0;
-			&:hover .img {
-				@include transform(scale(1.1));
-			}
-		}
-	}
-}
-
-.post {
-	width: 70vw;
-	background-color: $white;
-	padding: 1rem;
-	margin: 1rem auto;
-	height: 90vh;
-	overflow: scroll;
-	.content {
-		color: $black;
-	}
-	h4 {
-		margin: $spacing-lg 0;
-	}
-	.img-parent {
-		width: 100%;
-		overflow: hidden;
-		height: 30rem;
-		width: 100%;
-		margin: 0 0 $spacing 0;
-		.img {
-			@include transition();
-			width: 100%;
-			height: 100%;
-			background-repeat: no-repeat;
-			background-size: cover;
+		&:hover .img {
+			@include transform(scale(1.1));
 		}
 	}
 }

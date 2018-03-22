@@ -21,7 +21,9 @@ class Modal extends React.Component {
     return (
       <div className="modal" onClick={this.handleClose}>
         <Icon icon="clear" className="close" handleClick={this.props.close} />
-        {this.props.children}
+        <div className="modal-body">
+          {this.props.children}
+        </div>
       </div>
     );
   }

@@ -7,6 +7,23 @@
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 9999;
 
+    .modal-body {
+        width: 70vw;
+        height: 90vh;
+        background-color: $white;
+        margin: 1rem auto;
+        padding: 1rem;
+        overflow: scroll;
+        color: $black;
+
+        .post {
+            .img-loaded {
+                box-shadow: none;
+                margin-bottom: $spacing;
+            }
+        }
+    }
+
     .close {
         color: $white;
         position: absolute;

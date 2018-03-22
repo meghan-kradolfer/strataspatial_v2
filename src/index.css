@@ -442,9 +442,6 @@ img {
 .fade-in {
   animation: fadeIn 5s linear; }
 
-.transform-true {
-  margin-top: 64px; }
-
 .fixed {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -452,6 +449,23 @@ img {
   -ms-filter: blur(5px);
   filter: blur(5px);
   width: 100%; }
+
+::-webkit-scrollbar {
+  width: 0.5rem; }
+
+::-webkit-scrollbar-track {
+  background: #FFFFFF; }
+
+::-webkit-scrollbar-thumb {
+  background: #141414; }
+
+::-moz-selection {
+  color: #141414;
+  background: #FFFFFF; }
+
+::selection {
+  color: #EEEEEE;
+  background: #141414; }
 
 h3 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -560,6 +574,17 @@ p {
   width: 100%;
   background-color: #EEEEEE; }
 
+.img-loaded {
+  overflow: hidden;
+  height: 20rem;
+  margin: 0.5rem 0; }
+  .img-loaded .img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center; }
+
 .navigation {
   width: 100%;
   text-align: center;
@@ -650,6 +675,17 @@ p {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 9999; }
+  .modal .modal-body {
+    width: 70vw;
+    height: 90vh;
+    background-color: #FFFFFF;
+    margin: 1rem auto;
+    padding: 1rem;
+    overflow: scroll;
+    color: #141414; }
+    .modal .modal-body .post .img-loaded {
+      box-shadow: none;
+      margin-bottom: 1rem; }
   .modal .close {
     color: #FFFFFF;
     position: absolute;
@@ -692,51 +728,25 @@ p {
     display: none !important;
     -webkit-appearance: none; }
 
-.blog .row {
-  padding: 2rem 0; }
-
-.blog .img-parent {
-  width: 100%;
-  overflow: hidden; }
-  .blog .img-parent .img {
-    -webkit-transition: all 1s linear;
-    transition: all 1s linear;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover; }
-
-.blog .view .img-parent {
-  box-shadow: 3px 3px 3px black;
-  height: 20rem;
-  cursor: pointer;
-  margin: 0.5rem 0; }
-  .blog .view .img-parent:hover .img {
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
-
-.post {
-  width: 70vw;
-  background-color: #FFFFFF;
-  padding: 1rem;
-  margin: 1rem auto;
-  height: 90vh;
-  overflow: scroll; }
-  .post .content {
-    color: #141414; }
-  .post h4 {
-    margin: 2rem 0; }
-  .post .img-parent {
-    width: 100%;
-    overflow: hidden;
-    height: 30rem;
-    width: 100%;
-    margin: 0 0 1rem 0; }
-    .post .img-parent .img {
+.blog {
+  margin-top: 1rem; }
+  .blog .img-loaded {
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer; }
+    .blog .img-loaded .img {
       -webkit-transition: all 1s linear;
       transition: all 1s linear;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
       background-size: cover; }
+    .blog .img-loaded:hover .img {
+      -ms-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+
+.enquire {
+  height: calc(100vh - 64px); }
+  .enquire .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }

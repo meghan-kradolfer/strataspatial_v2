@@ -47,7 +47,7 @@ class BlogView extends Component {
   }
   render() {
     return (
-      <section className="blog container">
+      <section id="blog" className="blog container">
         <div className="row view">
           {this.props.posts.all.items ? this.renderPosts(this.props.posts.all.items) : "loading"}
         </div>

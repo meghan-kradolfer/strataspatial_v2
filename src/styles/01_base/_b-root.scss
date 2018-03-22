@@ -27,10 +27,6 @@ img {
   animation: fadeIn 5s linear;
 }
 
-.transform-true {
-  margin-top: 64px;
-}
-
 .fixed {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -38,4 +34,26 @@ img {
   -ms-filter: blur(5px);
   filter: blur(5px);
   width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: $spacing-sm;
+}
+
+::-webkit-scrollbar-track {
+  background: $white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $black;
+}
+
+::-moz-selection {
+  color: $black;
+  background: $white;
+}
+
+::selection {
+  color: $gray;
+  background: $black;
 }
