@@ -17,7 +17,7 @@
     transition: $prop $time $animate;
 }
 
-@mixin box-shadow($values) {
+@mixin box-shadow($values: 1px 1px 3px black) {
     -webkit-box-shadow: $values;
     -moz-box-shadow: $values;
     box-shadow: $values;

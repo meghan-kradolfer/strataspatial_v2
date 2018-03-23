@@ -1,25 +1,32 @@
 .blog-header {
-    padding: 1rem 0;
-    border-bottom: 0.5rem solid $black;
+    padding: $spacing-sm 0 $spacing 0;
+    border-bottom: 0.2rem solid $black;
     position: relative;
     &:after {
         content: "";
         position: absolute;
-        bottom: -20px;
+        bottom: -0.7rem;
         left: 2rem;
         width: 0;
         height: 0;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-top: 20px solid $black;
+        border-left: $spacing-sm solid transparent;
+        border-right: $spacing-sm solid transparent;
+        border-top: $spacing-sm solid $black;
     }
     .logo {
+        animation: none;
         color: $black;
+        margin: 0;
     }
     h3 {
         color: $black;
-      position: absolute;
-      right:0;
-      top: $spacing;
+        position: absolute;
+        right:0;
+        top: 0;
+    }
+    @media (max-width: $container-width-sm) {
+       h1, h3 {
+           position: static;
+       }
     }
 }

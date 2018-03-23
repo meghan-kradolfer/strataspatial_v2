@@ -1,16 +1,21 @@
 .navigation {
     width: 100%;
     text-align: center;
-    padding: 1rem 0;
+    padding: $spacing 0;
     .nav-item {
         font-family: $sans-serif;
         color: $white;
         position: relative;
-        font-size: 1.5rem;
+        font-size: $spacing-m;
         cursor: pointer;
         text-decoration: none;
         margin: 0 2rem;
-        padding: 0 1.5rem;
+        padding: 0 $spacing-m;
+        .icon-svg {
+            display: inline-block;
+            width: $spacing-m;
+            height: $spacing-m;
+        }
         .link-text {
             @include transition($time: 0.3s);
             position: absolute;

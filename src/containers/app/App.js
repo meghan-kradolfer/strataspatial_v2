@@ -7,6 +7,7 @@ import { select } from '../../actions/global/select';
 import Modal from '../../components/Modal';
 import Home from '../../components/Home';
 import Enquire from '../../components/Enquire';
+import Icon from '../../components/Icon';
 import BlogView from '../blog/BlogView';
 import BlogPost from '../blog/BlogPost';
 
@@ -18,7 +19,10 @@ function mapStateToProps(state) {
 
 const propTypes = {
 	select: PropTypes.func,
-	selected: PropTypes.string
+	selected: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.boolean
+	  ])
 };
 
 class App extends Component {
@@ -49,15 +53,15 @@ class App extends Component {
 					<div className="navigation">
 						<Link className="nav-item" activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}>
 							<span className="link-text">Home</span>
-							<span className="fa fa-home" />
+							<Icon icon="home" />
 						</Link>
 						<Link className="nav-item" activeClass="active" to="blog" spy={true} smooth={true} offset={50} duration={500}>
 							<span className="link-text">Blog</span>
-							<span className="fa fa-rss" />
+							<Icon icon="blog" />
 						</Link>
 						<Link className="nav-item" activeClass="active" to="enquire" spy={true} smooth={true} offset={50} duration={500}>
 							<span className="link-text">Enquire</span>
-							<span className="fa fa-envelope" />
+							<Icon icon="contact" />
 						</Link>
 					</div>
 					<BlogView />
@@ -67,9 +71,7 @@ class App extends Component {
 					<Modal close={this.removePost}>
 						<BlogPost postId={this.props.selected} />
 					</Modal>
-				) : (
-						false
-					)}
+				) : ""}
 			</div>
 		);
 	}

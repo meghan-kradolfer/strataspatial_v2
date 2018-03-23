@@ -479,7 +479,7 @@ h4 {
   margin: 0;
   text-align: center; }
 
-p {
+p, .tooltip {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   margin: 0.5rem 0;
   text-align: center;
@@ -598,6 +598,10 @@ p {
     text-decoration: none;
     margin: 0 2rem;
     padding: 0 1.5rem; }
+    .navigation .nav-item .icon-svg {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem; }
     .navigation .nav-item .link-text {
       -webkit-transition: all 0.3s linear;
       transition: all 0.3s linear;
@@ -645,27 +649,54 @@ p {
       border-bottom: 5px solid #FFFFFF;
       border-top: 0; }
 
+.tooltip {
+  -webkit-box-shadow: 1px 1px 3px black;
+  -moz-box-shadow: 1px 1px 3px black;
+  box-shadow: 1px 1px 3px black;
+  position: absolute;
+  background-color: #FFFFFF;
+  margin-top: 3rem;
+  color: #141414;
+  padding: 0.5rem; }
+  .tooltip:before {
+    content: "\A";
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid #FFFFFF;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+
 .blog-header {
-  padding: 1rem 0;
-  border-bottom: 0.5rem solid #141414;
+  padding: 0.5rem 0 1rem 0;
+  border-bottom: 0.2rem solid #141414;
   position: relative; }
   .blog-header:after {
     content: "";
     position: absolute;
-    bottom: -20px;
+    bottom: -0.7rem;
     left: 2rem;
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #141414; }
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.5rem solid #141414; }
   .blog-header .logo {
-    color: #141414; }
+    animation: none;
+    color: #141414;
+    margin: 0; }
   .blog-header h3 {
     color: #141414;
     position: absolute;
     right: 0;
-    top: 1rem; }
+    top: 0; }
+  @media (max-width: 50rem) {
+    .blog-header h1, .blog-header h3 {
+      position: static; } }
 
 .modal {
   position: fixed;
@@ -683,6 +714,10 @@ p {
     padding: 1rem;
     overflow: scroll;
     color: #141414; }
+    @media (max-width: 50rem) {
+      .modal .modal-body {
+        width: 100%;
+        margin: 4rem 0 0 0; } }
     .modal .modal-body .post .img-loaded {
       box-shadow: none;
       margin-bottom: 1rem; }
@@ -731,7 +766,9 @@ p {
 .blog {
   margin-top: 1rem; }
   .blog .img-loaded {
-    box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 1px 1px 3px black;
+    -moz-box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px black;
     cursor: pointer; }
     .blog .img-loaded .img {
       -webkit-transition: all 1s linear;
@@ -750,3 +787,5 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+  .enquire .logo a {
+    text-decoration: none; }

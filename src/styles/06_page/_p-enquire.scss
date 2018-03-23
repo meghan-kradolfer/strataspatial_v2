@@ -3,4 +3,8 @@
     .container {
         @include center();
     }
+
+    .logo a {
+        text-decoration: none;
+    }
 }

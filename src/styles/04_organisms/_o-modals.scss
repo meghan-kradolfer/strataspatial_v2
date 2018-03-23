@@ -15,7 +15,10 @@
         padding: 1rem;
         overflow: scroll;
         color: $black;
-
+        @media (max-width: $container-width-sm) {
+            width: 100%;
+            margin: 4rem 0 0 0;
+        }
         .post {
             .img-loaded {
                 box-shadow: none;

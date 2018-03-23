@@ -1,7 +1,7 @@
 .blog {
 	margin-top: $spacing;
 	.img-loaded {
-		box-shadow: 3px 3px 3px black;
+		@include box-shadow();
 		cursor: pointer;
 		.img {
 			@include transition();

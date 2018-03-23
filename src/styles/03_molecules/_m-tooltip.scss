@@ -1,0 +1,22 @@
+.tooltip {
+    @extend p;
+    @include box-shadow();
+    position: absolute;
+    background-color: $white;
+    margin-top: 3rem;
+    color: $black;
+    padding: $spacing-sm;
+    &:before {
+        content: "\A";
+        width: 0;
+        height: 0;
+        border-left: $spacing-sm solid transparent;
+        border-right: $spacing-sm solid transparent;
+        border-bottom: $spacing-sm solid $white;
+        position: absolute;
+        top: -$spacing-sm;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+}

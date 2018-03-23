@@ -31,13 +31,3 @@ git add .
 git commit -m "another commit"
 git push origin
 ```
-
-## Deploying
-
-``` javascript
-git add .
-git commit -m "another commit"
-git push heroku master
-
-heroku open
-```
