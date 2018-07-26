@@ -46,10 +46,12 @@ class BlogView extends Component {
     });
   }
   render() {
+    const items = this.props.posts.all && this.props.posts.all.items
+
     return (
       <section id="blog" className="blog container">
         <div className="row view">
-          {this.props.posts.all.items ? this.renderPosts(this.props.posts.all.items) : "loading"}
+          {items ? this.renderPosts(this.props.posts.all.items) : "loading"}
         </div>
       </section>
     );
