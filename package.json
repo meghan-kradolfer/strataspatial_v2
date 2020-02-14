@@ -22,7 +22,7 @@
     "redux": "^3.7.2",
     "redux-form": "^7.4.2",
     "redux-promise": "^0.5.3",
-    "yarn": "^1.16.0"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {},
   "scripts": {
